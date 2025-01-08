@@ -14,19 +14,33 @@ namespace Selenium.InlazeAutomation.Pages
     {
         protected IWebDriver _driver;
 
+        /// <summary>
+        /// Constructor de la clase BasePage.
+        /// Inicializa el controlador del navegador y configura los ayudantes de espera.
+        /// </summary>
+        /// <param name="driver">Instancia de IWebDriver para interactuar con el navegador.</param>
         public BasePage(IWebDriver driver)
         {
             _driver = driver;
             WaitHelpers.Initialize(_driver);
         }
 
-        // Encuentra un elemento usando un localizador y espera a que sea visible
+        /// <summary>
+        /// Encuentra un elemento en la página usando un localizador y espera a que sea visible.
+        /// </summary>
+        /// <param name="locator">Localizador del elemento (por ejemplo, By.Id, By.CssSelector).</param>
+        /// <returns>El elemento encontrado como IWebElement.</returns>
         protected IWebElement FindElement(By locator)
         {
             return WaitHelpers.WaitForElementToBeVisible(() => _driver.FindElement(locator));
         }
 
-        // Métodos genéricos para interactuar con elementos
+        /// <summary>
+        /// Ingresa texto en un campo de entrada de texto.
+        /// Verifica que el elemento sea visible y habilitado antes de interactuar con él.
+        /// </summary>
+        /// <param name="locator">Localizador del elemento de entrada de texto.</param>
+        /// <param name="text">Texto que se desea ingresar en el campo.</param>
         protected void EnterText(By locator, string text)
         {
             var element = FindElement(locator);
@@ -37,22 +51,29 @@ namespace Selenium.InlazeAutomation.Pages
                 element.Clear();
                 element.SendKeys(text);
             }
-            
         }
 
-        // Método para hacer click en un elemento
+        /// <summary>
+        /// Hace clic en un elemento de la página.
+        /// Espera a que el botón sea clicable antes de realizar la acción.
+        /// </summary>
+        /// <param name="locator">Localizador del elemento al que se le hará clic.</param>
         protected void ClickElement(By locator)
         {
             var element = FindElement(locator);
             WaitHelpers.WaitForButtonToBeClickable(element);
         }
 
-        // Método para obtener el texto de un elemento
+        /// <summary>
+        /// Obtiene el texto de un elemento de la página.
+        /// </summary>
+        /// <param name="locator">Localizador del elemento del cual se desea obtener el texto.</param>
+        /// <returns>El texto del elemento como una cadena.</returns>
         protected string GetElementText(By locator)
         {
             var element = FindElement(locator);
             return element.Text;
         }
-
     }
 }
+

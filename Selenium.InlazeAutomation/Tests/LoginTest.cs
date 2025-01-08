@@ -1,26 +1,27 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-using Selenium.InlazeAutomation.Pages;
-using Selenium.InlazeAutomation.Helpers;
+﻿using Selenium.InlazeAutomation.Pages;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 /// <summary>
-/// En este caso de prueba se valida que se registre exitosamente un usuario.
+/// En este caso de prueba se valida que al iniciar sesión, la web muestre el nombre de usuario correspondiente.
 /// </summary>
 
 namespace Selenium.InlazeAutomation.Tests
 {
     [TestClass]
-    public class RegisterUserPageTests : BaseTest
+    public class LoginTest : BaseTest
     {
         private SignInPage _signInPage;
         private SignUpPage _signUpPage;
+        private PanelPage _panelPage;
 
         [TestMethod]
         [DataRow("chrome", 0, "Registrar Usuario")]
         [DataRow("firefox", 0, "Registrar Usuario")]
-        public void RegisterUser_TC01(string browser, int rowData, string scenary)
+        public void LoginTest_TC01(string browser, int rowData, string scenary)
         {
             // Arrange
             TestCleanup();
@@ -28,13 +29,13 @@ namespace Selenium.InlazeAutomation.Tests
 
             _signInPage = new SignInPage(_driver);
             _signUpPage = new SignUpPage(_driver);
+            _panelPage = new PanelPage(_driver);            
 
             var excelFilePath = "..\\..\\..\\Data\\Data.xlsm";
-            var sheetName = "RegisterUser_TC01";
+            var sheetName = "LoginTest_TC01";
             var excelData = ReadExcelData(excelFilePath, sheetName);
 
             var HomeUrl = excelData.Rows[rowData]["HomeUrl"].ToString();
-            var FullName = excelData.Rows[rowData]["FullName"].ToString();
             var Email = excelData.Rows[rowData]["Email"].ToString();
             var Password = excelData.Rows[rowData]["Password"].ToString();
             var ExpectedText = excelData.Rows[rowData]["ExpectedText"].ToString();
@@ -42,18 +43,15 @@ namespace Selenium.InlazeAutomation.Tests
             // Act
             _driver.Navigate().GoToUrl(HomeUrl);
 
-            _signInPage.ClickSignUpText();
-            _signUpPage.EnterFullName(FullName);
-            _signUpPage.EnterEmail(Email);
-            _signUpPage.EnterPassword(Password);
-            _signUpPage.EnterConfirmPassword(Password);
-            _signUpPage.ClickSignUpButton();
+            // Iniciar sesión
+            _signInPage.LoginMethod(Email, Password);
 
             // Assert
-            string ActualText = _signInPage.GetAlertMessage();
+            string ActualText = _panelPage.GetTextUserName();
             Assert.IsTrue(ActualText.Contains(ExpectedText),
-                $"El texto esperado: '{ExpectedText}', no se encontró dentro del mensaje capturado: '{ActualText}'");
+                $"El nombre capturado no coincide con el nombre esperado del usuario, se esperaba:'{ExpectedText}', el nombre capturado fue:'{ActualText}'");
+
+
         }
     }
 }
-

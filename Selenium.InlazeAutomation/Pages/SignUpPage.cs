@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Selenium.InlazeAutomation.Pages
 {
-    public class RegisterPage : BasePage
+    public class SignUpPage : BasePage
     {
-        public RegisterPage(IWebDriver driver) : base(driver)
+        public SignUpPage(IWebDriver driver) : base(driver)
         {
         }
 
