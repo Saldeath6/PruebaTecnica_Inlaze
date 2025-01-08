@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Selenium.InlazeAutomation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc48cdbdaaf1c96fca6c1b484834579fa44fd2b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0a410f1c3ecfe30045b8cce634ae7851de823e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Selenium.InlazeAutomation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Selenium.InlazeAutomation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

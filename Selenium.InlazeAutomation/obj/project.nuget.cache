@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "byj3JdUcJSY=",
+  "dgSpecHash": "Bx5a6u4/SRs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Saldeath\\source\\repos\\PruebaTecnica_Inlaze\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
+  "projectFilePath": "C:\\Users\\Saldeath\\Source\\Repos\\PruebaTecnica_Inlaze_Test_Descarga\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Saldeath\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Saldeath\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",

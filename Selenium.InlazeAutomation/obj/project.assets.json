@@ -6742,11 +6742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Saldeath\\source\\repos\\PruebaTecnica_Inlaze\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
+      "projectUniqueName": "C:\\Users\\Saldeath\\Source\\Repos\\PruebaTecnica_Inlaze_Test_Descarga\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
       "projectName": "Selenium.InlazeAutomation",
-      "projectPath": "C:\\Users\\Saldeath\\source\\repos\\PruebaTecnica_Inlaze\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
+      "projectPath": "C:\\Users\\Saldeath\\Source\\Repos\\PruebaTecnica_Inlaze_Test_Descarga\\Selenium.InlazeAutomation\\Selenium.InlazeAutomation.csproj",
       "packagesPath": "C:\\Users\\Saldeath\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Saldeath\\source\\repos\\PruebaTecnica_Inlaze\\Selenium.InlazeAutomation\\obj\\",
+      "outputPath": "C:\\Users\\Saldeath\\Source\\Repos\\PruebaTecnica_Inlaze_Test_Descarga\\Selenium.InlazeAutomation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Saldeath\\AppData\\Roaming\\NuGet\\NuGet.Config",

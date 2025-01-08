@@ -12,7 +12,7 @@ using Selenium.InlazeAutomation.Helpers;
 namespace Selenium.InlazeAutomation.Tests
 {
     [TestClass]
-    public class RegisterUserPageTests : BaseTest
+    public class RegisterUserPageTest : BaseTest
     {
         private SignInPage _signInPage;
         private SignUpPage _signUpPage;
